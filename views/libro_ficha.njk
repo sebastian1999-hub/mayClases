@@ -1,0 +1,24 @@
+{% include "menu.njk" %}
+{% extends "base.njk" %}
+
+{% block titulo %}Libro | Ficha{% endblock %}
+
+{% block contenido %}
+
+    <h1>Ficha de un libro</h1>
+<div>
+    <p><strong>Autor:</strong> {{ libro.autor }}</p>
+    <p><strong>Titulo:</strong> {{ libro.titulo }}</p>
+    <p><strong>Editorial:</strong> {{ libro.editorial }}</p>
+    <p><strong>Precio:</strong> {{ libro.precio}}</p>
+    {% if (libro.portada!==null) %}
+    <p><strong>Portada:</strong><img style="width:80px; height:80px;" src="/public/uploads/{{ libro.portada }}"></p>
+    {% endif %}
+    <p><strong>Comentarios:</strong></p>
+    <ul>
+     {% for comentario in libro.comentarios %}
+            <li>{{ comentario.texto }} - {{ comentario.nick }}</li>
+        {% endfor %}
+        </ul>
+</div>
+{% endblock %}

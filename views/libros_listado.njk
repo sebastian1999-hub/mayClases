@@ -1,0 +1,24 @@
+
+{% extends "base.njk" %}
+
+{% block titulo %}Libros | Listado{% endblock %}
+
+{% block contenido %}
+
+    <h1>Listado de Libros</h1>
+
+    <ul>
+        {% for libro in libros %}
+            <li  >{{ libro.titulo }} <a href="/libros/{{libro.id}}"><button class="btn btn-success" >Ver ficha</button></a>
+            <form action="/libros/{{ libro.id }}" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button type="submit" class="btn btn-danger">
+                    Borrar
+                </button>
+            </form>
+            <a class="btn btn-success" href="/libros/editar/{{libro.id}}">Editar</a>
+            </li> 
+        {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block titulo %} {% endblock %}</title>
+        <link rel="stylesheet" href="../public/css/style.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <style>
+            li{
+            margin:10px;
+            }
+            nav{
+            background-color:grey;
+            }
+            button{
+            margin:5px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            {% include "menu.njk" %}
+            {% block contenido %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>

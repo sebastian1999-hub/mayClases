@@ -1,0 +1,18 @@
+{% extends "base.njk" %}
+{% block titulo %}Autores | Nuevo{% endblock %}
+{% block contenido %}
+    <h1>Inserción de nuevo Autor</h1>
+    <form action="/autores" method="post">
+        <div class="form-group">
+            <label>Nombre:
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre del Autor..."></label>
+            </div>
+           
+                    <label>Año Nacimiento:
+                        <input type="number" class="form-control" name="anyoNacimiento" placeholder="Año de nacimiento..."></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Enviar
+                    </button>
+                </form>
+            {% endblock %}
